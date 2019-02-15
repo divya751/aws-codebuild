@@ -43,7 +43,7 @@ RUN echo "# Installing Nodejs" && \
     echo "######## npm set strict-ssl false" && \
     npm -v && \
     npm set strict-ssl false && \
-    npm install -g npm@latest && \
+#    npm install -g npm@latest && \
     npm install -g bower grunt grunt-cli && \
     npm cache clear -f && \
     npm install -g n && \
