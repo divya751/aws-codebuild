@@ -41,6 +41,8 @@ RUN echo "# Installing Nodejs" && \
     echo "######## Installing Nodejs buildessential" && \
     apt-get install nodejs build-essential -y && \
     echo "######## npm set strict-ssl false" && \
+    npm -v && \
+    npm set strict-ssl false && \
     npm install -g npm@latest && \
     npm install -g bower grunt grunt-cli && \
     npm cache clear -f && \
