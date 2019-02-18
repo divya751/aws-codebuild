@@ -15,7 +15,7 @@ phases:
       - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
       - CODEBUILD_RESOLVED_SOURCE_VERSION="${CODEBUILD_RESOLVED_SOURCE_VERSION:-$IMAGE_TAG}"
       - echo ${CODEBUILD_RESOLVED_SOURCE_VERSION:-$IMAGE_TAG}
-      - $(aws --profile ${AWS_CLI_PROFILE_NAME} ecr describe-repositories --repository-names "ECSs-ECSCluster-18JXZ9TXDL5WM" )
+      - $(aws ecr describe-repositories --repository-names "ECSs-ECSCluster-18JXZ9TXDL5WM" )
       - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - echo $IMAGE_TAG
       - IMAGE_URI="$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG"
