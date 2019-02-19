@@ -29,15 +29,12 @@ WORKDIR /usr/src/app
 
 COPY iot-home/* /usr/src/app/
 
-RUN cd /usr/src/app/ && \
+#RUN cd /usr/src/app/ && \
     ls -ltra && \
     pwd && \
     sh -x upgrade_docker.sh && \
     echo "I am done! Thanks."
-#RUN chmod +x upgrade_docker.sh
-#RUN pip install --no-cache-dir -r requirements.txt
 
-#COPY . /usr/src/app
 
 ###CMD ["python","flask-app/hello.py"]
 ###  CMD php-fpm -d variables_order="EGPCS" && (tail -F /var/log/nginx/access.log &) && exec nginx -g "daemon off;"
