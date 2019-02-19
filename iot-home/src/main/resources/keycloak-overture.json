@@ -1,0 +1,9 @@
+{
+  "realm": "homegate",
+  "auth-server-url": "https://login-overture.homegate.io/auth",
+  "ssl-required": "all",
+  "resource": "home-web",
+  "credentials": {
+    "secret": "4a0bee15-d48b-4391-a8a8-76fa9e7d0260"
+  }
+}

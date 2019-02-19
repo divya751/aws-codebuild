@@ -1,0 +1,11 @@
+{
+  "realm": "homegate",
+  "auth-server-url": "https://login-qa.datek.no/auth",
+  "ssl-required": "external",
+  "resource": "home-web",
+  "credentials": {
+    "secret": "df329de8-e202-499c-968f-ef350911ac55"
+  },
+  "use-resource-role-mappings": true,
+  "confidential-port": 0
+}

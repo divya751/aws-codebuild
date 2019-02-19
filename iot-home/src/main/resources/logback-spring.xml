@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}/spring.log}"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+    <include resource="org/springframework/boot/logging/logback/file-appender.xml" />
+
+    <springProfile name="!app-server">
+        <root level="WARN">
+            <appender-ref ref="CONSOLE" />
+        </root>
+    </springProfile>
+
+    <springProfile name="app-server">
+        <appender name="PAPERTRAIL_TLS_ERROR_APPENDER" class="com.papertrailapp.logback.Syslog4jAppender">
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <pattern>%date{"yyyy-MM-dd'T'HH:mm:ss,SSSXXX", UTC} [%5p] ${PID:- } --- [%t] %-40.40logger{39} : %m%n%wEx</pattern>
+            </layout>
+            <syslogConfig class="org.productivity.java.syslog4j.impl.net.tcp.ssl.SSLTCPNetSyslogConfig">
+                <host>logs.papertrailapp.com</host>
+                <port>12280</port>
+                <ident>${LOGBACK-APP-NAME:-unknown}</ident>
+                <maxMessageLength>128000</maxMessageLength>
+            </syslogConfig>
+            <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+                <level>ERROR</level>
+            </filter>
+        </appender>
+        <appender name="PAPERTRAIL_ASYNC_ERROR_APPENDER" class="ch.qos.logback.classic.AsyncAppender">
+            <queueSize>500</queueSize>
+            <neverBlock>true</neverBlock>
+            <maxFlushTime>3000</maxFlushTime>
+            <appender-ref ref="PAPERTRAIL_TLS_ERROR_APPENDER" />
+        </appender>
+
+        <root level="WARN">
+            <appender-ref ref="PAPERTRAIL_ASYNC_ERROR_APPENDER" />
+            <appender-ref ref="FILE" />
+        </root>
+    </springProfile>
+</configuration>

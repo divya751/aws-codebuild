@@ -1,0 +1,10 @@
+{
+  "realm": "homegate",
+  "realm-public-key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArVWfji1pfdAd0CO22QwkzZha5nymMaY094htHsMq/bfiTkEYDt2MC8tFeYCy1wHlPaW6cmvc+ZRUsdk89a9MMQKa7HqDrtoPZCm+QrnhJbAerVLrhF3lgy+v3sxv7zBUMpnraD9naFEe3FNjLq+408EarhJorU1BhhG9cFn8TjSmxJH3yxi9u3R5tOCgcX3ZGUclOk+jWUPHvPjEKppLSZBTSvImviQiwNRxlzHlyfamT9nP4KU2P+aBqSFV9fciyrk5b/fzNKZ8wDvKE+O55YnI+Bdi9WcMhZsE7Ra5oHKkArsTru/hOZKIYQ3k6lE38VUJQ+7MGyM0rf9RrJp4kQIDAQAB",
+  "auth-server-url": "http://login.test.homegate.io/auth",
+  "ssl-required": "external",
+  "resource": "home-web",
+  "credentials": {
+    "secret": "a3004c0b-485d-4749-90a0-355dbf41351a"
+  }
+}

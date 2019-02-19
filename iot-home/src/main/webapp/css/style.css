@@ -1,0 +1,149 @@
+body {
+    background-color: white;
+    font-size: 13px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-top: 0px;
+}
+
+.row {
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.row.first {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+ol.name-value {
+    list-style: none;
+    display: table;
+    padding: 10px 0;
+    width: 100%;
+}
+
+ol.name-value li {
+    display: table-row;
+}
+
+ol.name-value li label {
+    display: table-cell;
+    width: 40%;
+}
+
+ol.name-value li span {
+    display: table-cell;
+    width: 60%;
+}
+
+#search-input {
+    width: 30ex;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.typeahead-results {
+    position: absolute;
+    left: -343px;
+    z-index: 99;
+    background-color: white;
+    border: 1px solid #CCC;
+    padding: 10px;
+    list-style-type: none;
+    width: 800px;
+    border-radius: 4px;
+}
+
+div.inner-grid {
+    margin-left: -15px;
+}
+
+.warning {
+    color: red;
+}
+
+.link {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}
+
+.link-cursor {
+    cursor: pointer;
+}
+
+.frontpage-grid-row {
+    margin-left: 0;
+}
+
+.frontpage-grid-row tr.frontpage-row:hover {
+    background-color: #e9e9e9;
+}
+
+.griddle-filter .form-control {
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+button.logout {
+    border: 0;
+    background: none;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 5px;
+    color: #337ab7;
+}
+
+button.logout:hover {
+    text-decoration: underline;
+}
+
+.logout-container {
+    text-align: right;
+}
+
+.raw-data-link {
+    margin: 5px 0 0 4px;
+}
+
+.set-pin-button {
+    margin-right: 20px;
+}
+
+.home-details-wrapper {
+    margin-bottom: 50px;
+}
+
+.sentence {
+    margin-right: 10px;
+}
+
+.reports {
+    text-align: right;
+}
+
+.connection-status-primary {
+    color: darkgreen;
+}
+
+.connection-status-backup {
+    color: darkorange;
+}
+
+.connection-status-offline {
+    color: red;
+}
+
+.connection-status-unknown {
+    color: black;
+}
+
+#app .container {
+    width: 95%;
+}
+

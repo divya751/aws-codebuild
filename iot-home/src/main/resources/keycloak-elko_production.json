@@ -1,0 +1,11 @@
+{
+  "realm": "ElkoSmartHome",
+  "auth-server-url": "https://login.elkosmarthome.io/auth",
+  "ssl-required": "all",
+  "resource": "home-web",
+  "credentials": {
+    "secret": "9d9ef9c8-685d-4ce1-b658-089f5b4ae365"
+  },
+  "use-resource-role-mappings": true,
+  "confidential-port": 0
+}

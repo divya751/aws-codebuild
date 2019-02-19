@@ -1,0 +1,63 @@
+logging:
+    level:
+        ROOT: WARN
+        org.springframework: INFO
+        no.datek.iot.home: INFO
+        org.apache.catalina.valves: DEBUG
+    pattern:
+        level: '[%5p]'
+spring:
+  data:
+    rest:
+      base-path: /api
+server:
+  port: 8080
+  compression:
+    enabled: true
+    mime-types: application/javascript,application/json,text/html
+  tomcat:
+    remote-ip-header: x-forwarded-for
+    protocol-header: x-forwarded-proto
+homegate:
+  api:
+    base-url: http://localhost:8081
+---
+spring:
+  profiles: safe4_test
+homegate:
+  api:
+    base-url: http://home-test-api.datek.no/
+server:
+  port: 8082
+---
+spring:
+  profiles: overture
+homegate:
+  api:
+    base-url: https://api-overture.homegate.io
+server:
+  port: 8082
+---
+spring:
+  profiles: qa
+homegate:
+  api:
+    base-url: https://home-api-qa.datek.no
+server:
+  port: 8082
+---
+spring:
+  profiles: elko_production
+homegate:
+  api:
+    base-url: https://home-api.elkosmarthome.io
+server:
+  port: 8082
+---
+spring:
+  profiles: safe4_production
+homegate:
+  api:
+    base-url: https://api.homegate.io
+server:
+  port: 8082

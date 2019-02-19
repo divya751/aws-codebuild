@@ -1,0 +1,9 @@
+{
+  "realm": "homegate",
+  "auth-server-url": "https://login.homegate.io/auth",
+  "ssl-required": "all",
+  "resource": "home-web",
+  "credentials": {
+    "secret": "afa96770-4a2d-449c-affc-c9b0f1817361"
+  }
+}
