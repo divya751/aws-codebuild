@@ -13,12 +13,11 @@ VOLUME /var/lib/maven
 RUN echo "# Installing Nodejs" && \
     echo "######### Maven version :" && \
     mvn -v && \
+    echo "######### Java version :" && \
     java -version && \
-    echo "######### curl from deb.nodesource.com" && \
     curl -sL https://deb.nodesource.com/setup_4.x | bash - && \
-    echo "######## Installing Nodejs buildessential" && \
     apt-get install nodejs build-essential -y && \
-    echo "######## npm set strict-ssl false" && \
+    echo "######### NPM version :" && \
     npm -v && \
     npm set strict-ssl false && \
 #    npm install -g npm@latest && \
@@ -26,5 +25,15 @@ RUN echo "# Installing Nodejs" && \
     npm cache clear -f && \
     npm install -g n && \
     n stable
-  ###  CMD php-fpm -d variables_order="EGPCS" && (tail -F /var/log/nginx/access.log &) && exec nginx -g "daemon off;"
-CMD echo "I am demo" > a.lst && (cat a.lst) && echo "I am done! Thanks."
+echo "I am demo" > a.lst && (cat a.lst) && echo "I am done! Thanks."
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+COPY iot-home/* /usr/src/app/
+ls -ltr /usr/src/app/
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . /usr/src/app
+
+###CMD ["python","flask-app/hello.py"]
+###  CMD php-fpm -d variables_order="EGPCS" && (tail -F /var/log/nginx/access.log &) && exec nginx -g "daemon off;"
