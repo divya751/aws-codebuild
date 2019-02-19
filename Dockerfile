@@ -24,9 +24,8 @@ RUN echo "# Installing Nodejs" && \
     npm install -g bower grunt grunt-cli && \
     npm cache clear -f && \
     npm install -g n && \
-    n stable
-    
-echo "I am demo" > a.lst && (cat a.lst) && echo "I am done! Thanks."
+    n stable && \
+    echo "I am demo" > a.lst && (cat a.lst) && echo "I am done! Thanks." 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
