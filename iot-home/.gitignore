@@ -1,0 +1,9 @@
+.idea
+*.iml
+node
+node_modules
+bundle.js
+target
+*.log
+.DS_Store
+89889688147bd7575d6327160d64e760.svg

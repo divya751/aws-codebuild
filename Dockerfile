@@ -28,7 +28,6 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 COPY iot-home/* /usr/src/app/
-COPY iot-home/.* /usr/src/app/
 
 RUN cd /usr/src/app/ && \
     ls -ltra && \
