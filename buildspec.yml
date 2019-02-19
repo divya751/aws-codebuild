@@ -30,8 +30,8 @@ phases:
       - echo Build stage successfully completed on `date`
       - echo Pushing the Docker image...
       - docker push $IMAGE_URI
-      - printf '[{"name":"nginx-temp","imageUri":"%s"}]' "$IMAGE_URI"
-      - printf '[{"name":"nginx-temp","imageUri":"%s"}]' "$IMAGE_URI" > images.json
+      - printf '[{"name":"ECSs-ECSCluster-18JXZ9TXDL5WM","imageUri":"%s"}]' "$IMAGE_URI"
+      - printf '[{"name":"ECSs-ECSCluster-18JXZ9TXDL5WMp","imageUri":"%s"}]' "$IMAGE_URI" > images.json
 
 artifacts:
   files: images.json
