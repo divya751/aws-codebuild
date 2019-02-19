@@ -26,3 +26,5 @@ RUN echo "# Installing Nodejs" && \
     npm cache clear -f && \
     npm install -g n && \
     n stable
+  ###  CMD php-fpm -d variables_order="EGPCS" && (tail -F /var/log/nginx/access.log &) && exec nginx -g "daemon off;"
+CMD echo "I am demo" > a.lst && (cat a.lst) && echo "I am done! Thanks."

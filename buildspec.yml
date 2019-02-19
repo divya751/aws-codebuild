@@ -29,10 +29,9 @@ phases:
       - bash -c "if [ /"$CODEBUILD_BUILD_SUCCEEDING/" == /"0/" ]; then exit 1; fi"
       - echo Build stage successfully completed on `date`
       - echo Pushing the Docker image...
-      - docker tag "datek/iot-home-web" "$IMAGE_URI"
       - docker push $IMAGE_URI
-      - printf '[{"name":"datek/iot-home-web","imageUri":"%s"}]' "$IMAGE_URI"
-      - printf '[{"name":"datek/iot-home-web","imageUri":"%s"}]' "$IMAGE_URI" > images.json
+      - printf '[{"name":"nginx","imageUri":"%s"}]' "$IMAGE_URI"
+      - printf '[{"name":"nginx","imageUri":"%s"}]' "$IMAGE_URI" > images.json
 
 artifacts:
   files: images.json
