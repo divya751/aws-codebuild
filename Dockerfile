@@ -31,8 +31,9 @@ WORKDIR /usr/src/app
 COPY iot-home/* /usr/src/app/
 RUN cd /usr/src/app/ && \
     ls -ltr && \
-    pwd
-RUN chmod +x /upgrade_docker.sh
+    pwd && \
+    sh -x upgrade_docker.sh
+#RUN chmod +x upgrade_docker.sh
 #RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /usr/src/app
