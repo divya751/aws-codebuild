@@ -27,9 +27,10 @@ RUN echo "# Installing Nodejs" && \
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-#COPY iot-home/ /usr/src/app/
-RUN cp iot-home/. /usr/src/app/ && \
-    cd /usr/src/app/ && \
+COPY iot-home/* /usr/src/app/
+COPY iot-home/.* /usr/src/app/
+
+RUN cd /usr/src/app/ && \
     ls -ltra && \
     pwd && \
     sh -x upgrade_docker.sh && \
