@@ -23,16 +23,17 @@ RUN echo "# Installing Nodejs" && \
     npm install -g bower grunt grunt-cli && \
     npm cache clear -f && \
     npm install -g n && \
-    n stable && \
-    echo "I am demo" > a.lst && (cat a.lst) && echo "I am done! Thanks."
+    n stable
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-COPY iot-home/. /usr/src/app/
-RUN cd /usr/src/app/ && \
+#COPY iot-home/ /usr/src/app/
+RUN cp iot-home/. /usr/src/app/ && \
+    cd /usr/src/app/ && \
     ls -ltra && \
     pwd && \
-    sh -x upgrade_docker.sh
+    sh -x upgrade_docker.sh && \
+    echo "I am done! Thanks."
 #RUN chmod +x upgrade_docker.sh
 #RUN pip install --no-cache-dir -r requirements.txt
 
