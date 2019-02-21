@@ -3,7 +3,7 @@ Description: Deploy a service on AWS ECS Fargate cluster.
 Parameters:
   Repository:
     Type: String
-    Default: datek/iot-home-web
+    Default: datek/iot-home-web-temp
     Description: The name of repository.
 Resources:
   BuildProject:
